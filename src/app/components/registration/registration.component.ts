@@ -21,7 +21,7 @@ interface User {
 })
 
 export class RegistrationComponent implements OnInit {
-  isRegistered = false;
+  isActive = false;
 
   RegForm!: FormGroup
 
@@ -29,7 +29,6 @@ export class RegistrationComponent implements OnInit {
     id: '', 
     name: '', 
     email: '', 
-    technology: '', 
     password: '', 
     //role: 'Student' 
   }
@@ -51,8 +50,8 @@ export class RegistrationComponent implements OnInit {
   ) { this.createForm(); }
 
   ngOnInit() { 
-    if (this.isRegistered === true) {
-      this.router.navigate(['/tests'])
+    if (this.isActive === true) {
+      this.router.navigate(['/Profile'])
     }
   }
 
@@ -73,7 +72,7 @@ export class RegistrationComponent implements OnInit {
   //    this.crudService.addUser(this.userObj).subscribe((data: {}) => {
   //      this.router.navigate(['/tests'])
   //    })
-  //    this.isRegistered = true;
+  //    this.isActive = true;
   //  }
   //}
 }

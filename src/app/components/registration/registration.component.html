@@ -1,4 +1,4 @@
-<div class="login-wrapper" fxLayout="row" fxLayoutAlign="center center" *ngIf="!isRegistered">
+<div class="login-wrapper" fxLayout="row" fxLayoutAlign="center center" *ngIf="!isActive">
     <mat-card class="box">
         <!--------- Mat Card Header --------->
         <mat-card-header>
@@ -20,7 +20,7 @@
                 </mat-form-field>
                 <!--------------------------- Live Full Name Input Errors ---------------------------> 
                 <div *ngIf="RegForm.controls['Name'].invalid && (RegForm.controls['Name'].dirty || RegForm.controls['Name'].touched)">
-                    <div *ngIf="RegForm.controls['Name'].errors!required">Full Name is required</div>
+                    <div *ngIf="RegForm.controls['Name'].errors!['required']">Full Name is required</div>
                 </div>
                 <!--------------------------- Email Input --------------------------->
                 <mat-form-field class="example-full-width"  appearance="outline">
@@ -29,14 +29,14 @@
                         matInput 
                         formControlName="Email"
                         [(ngModel)]="userObj.email" 
-                        placeholder="terry.bruno@linkedworld.com"
+                        placeholder="Email"
                     >
                     <mat-icon *ngIf="userObj.email" matSuffix mat-icon-button aria-label="Clear" (click)="userObj.email=''">close</mat-icon>
                 </mat-form-field>
                 <!--------------------------- Live Email Input Errors ---------------------------> 
                 <div *ngIf="RegForm.controls['Email'].invalid && (RegForm.controls['Email'].dirty || RegForm.controls['Email'].touched)">
-                    <div *ngIf="RegForm.controls['Email'].errors!required">Email is required</div>
-                    <div *ngIf="RegForm.controls['Email'].errors!email">Please enter a valid email address</div>
+                    <div *ngIf="RegForm.controls['Email'].errors!['required']">Email is required</div>
+                    <div *ngIf="RegForm.controls['Email'].errors!['email']">Please enter a valid email address</div>
                 </div>
                 <!--------------------------- Password Input --------------------------->
                 <mat-form-field class="example-full-width"  appearance="outline">
@@ -52,7 +52,7 @@
                 </mat-form-field>
                 <!--------------------------- Live Password Input Errors --------------------------->
                 <div *ngIf="RegForm.controls['Password'].invalid && (RegForm.controls['Password'].dirty || RegForm.controls['Password'].touched)">
-                    <div *ngIf="RegForm.controls['Password'].errors!required">Password is required</div>
+                    <div *ngIf="RegForm.controls['Password'].errors!['required']">Password is required</div>
                     <div *ngIf="RegForm.controls['Password'].errors!pattern">
                         The password must contain the following:<br>
                         Only English letters<br>
@@ -76,7 +76,7 @@
                 </mat-form-field>
                 <!--------------------------- Live Confirm Password Input Errors --------------------------->
                 <div *ngIf="RegForm.controls['ConfirmPassword'].invalid && (RegForm.controls['ConfirmPassword'].dirty || RegForm.controls['ConfirmPassword'].touched)">
-                    <div *ngIf="RegForm.controls['ConfirmPassword'].errors!required">Password is required</div>
+                    <div *ngIf="RegForm.controls['ConfirmPassword'].errors!['required']">Password is required</div>
                     <div *ngIf="RegForm.controls['ConfirmPassword'].errors!mustMatch">Passwords must match</div>
                 </div>
             </mat-card-content>
