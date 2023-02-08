@@ -12,13 +12,14 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card'; 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field'; 
+import { MatInputModule } from '@angular/material/input'; 
 
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { HomeComponent } from './components/home/home.component';
 import { ContactsComponent } from './components/contacts/contacts.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { RegistrationComponent } from './components/registration/registration.component';
-import { AuthorizationComponent } from './components/authorization/authorization.component';
+import { LoginComponent } from './components/login/login.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,7 @@ import { AuthorizationComponent } from './components/authorization/authorization
     ContactsComponent,
     ProfileComponent,
     RegistrationComponent,
-    AuthorizationComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
@@ -41,7 +42,8 @@ import { AuthorizationComponent } from './components/authorization/authorization
     MatCardModule,
     FormsModule,
     ReactiveFormsModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    MatInputModule
   ],
   providers: [],
   bootstrap: [AppComponent]

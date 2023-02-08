@@ -1,0 +1,70 @@
+<div class="main-area" *ngIf="!this.isActive">
+    <mat-card>
+        <!--------- Mat Card Header --------->
+        <div class="card-title">Log in to your account</div>
+        <!--------------------------- User Login Form --------------------------->
+        <form [formGroup]="LoginForm">
+            <mat-card-content>
+                <!--------------------------- Email Input --------------------------->
+                <mat-form-field appearance="outline">
+                    <mat-label>Email</mat-label>
+                    <input 
+                        matInput 
+                        formControlName="Email"
+                        [(ngModel)]="userObj.email" 
+                        placeholder="Email"
+                    >
+                    
+                </mat-form-field>
+                <!--------------------------- Live Email Input Errors ---------------------------> 
+                <div id="error-message" *ngIf="LoginForm.controls['Email'].invalid && (LoginForm.controls['Email'].dirty || LoginForm.controls['Email'].touched)">
+                    <div id="error-text" *ngIf="LoginForm.controls['Email'].errors!['required']">Email is required</div>
+                    <div id="error-text" *ngIf="LoginForm.controls['Email'].errors!['email']">Please enter a valid email address</div>
+                </div><br>
+                <!--------------------------- Password Input --------------------------->
+                <mat-form-field appearance="outline">
+                    <mat-label>Password</mat-label>
+                    <input 
+                        matInput 
+                        [type]="hidePass ? 'password' : 'text'"
+                        formControlName="Password"
+                        [(ngModel)]="userObj.password" 
+                        placeholder="Password"
+                    >
+                    <mat-icon matSuffix (click)="hidePass = !hidePass">{{hidePass ? 'visibility_off' : 'visibility'}}</mat-icon>
+                </mat-form-field>
+                <!--------------------------- Live Password Input Errors --------------------------->
+                <div id="error-message" class="error" *ngIf="LoginForm.controls['Password'].invalid && (LoginForm.controls['Password'].dirty || LoginForm.controls['Password'].touched)">
+                    <div id="error-text" *ngIf="LoginForm.controls['Password'].errors!['required']">Password is required</div>
+                    <div id="error-text" *ngIf="!LoginForm.controls['Password'].errors!['required'] && LoginForm.controls['Password'].errors!pattern">
+                        The password must contain the following:<br>
+                        Only English letters<br>
+                        At least 8 English characters in length<br>
+                        At least 1 lowercase and 1 uppercase letters<br>
+                        At least 1 special character ( #@$!%*?& )<br>
+                        At least 1 number
+                    </div>
+                </div><br>
+                <br>
+                <!--------------------------- Login Button --------------------------->
+                <!--------------------------- (click)="addUser(userObj)" is button action --------------------------->
+                <button 
+                    id="complete-button"
+                    mat-stroked-button
+                    color="primary"
+                    [disabled]="!LoginForm.valid" 
+                    
+                >Log in to your account</button>
+                <br>
+                <!-- Form is valid: {{LoginForm.valid}}<br>User is active: {{this.isActive}} -->
+                <p style="text-align: center; margin: 12px 0px;">or</p>
+                <button 
+                    id="complete-button"
+                    mat-stroked-button
+                    color="primary"
+                    routerLink="../registration"
+                >Create a new account</button>
+            </mat-card-content>
+        </form>
+    </mat-card>
+</div>
