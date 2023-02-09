@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { ToolbarComponent } from './components/toolbar/toolbar.component';
@@ -20,6 +21,8 @@ import { ContactsComponent } from './components/contacts/contacts.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { RegistrationComponent } from './components/registration/registration.component';
 import { LoginComponent } from './components/login/login.component';
+import { ProductsListComponent } from './components/products-list/products-list.component';
+import { SalesListComponent } from './components/sales-list/sales-list.component';
 
 @NgModule({
   declarations: [
@@ -31,11 +34,14 @@ import { LoginComponent } from './components/login/login.component';
     ProfileComponent,
     RegistrationComponent,
     LoginComponent,
+    ProductsListComponent,
+    SalesListComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    HttpClientModule,
     MatToolbarModule,
     MatIconModule,
     MatButtonModule,
