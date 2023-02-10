@@ -2,7 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 //import { CrudService } from '../_services/crud.service';
-import { MustMatch } from '../_helpers/must-match.validator';
+import { MustMatch } from '../../_helpers/must-match.validator';
 
 interface User {
   Email: string;

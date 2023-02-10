@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { SalesModel } from 'src/app/models/sales-model';
+import { Sale } from 'src/app/models/sales-model';
 import { SalesService } from 'src/app/services/sales.service';
 
 @Component({
@@ -8,8 +8,7 @@ import { SalesService } from 'src/app/services/sales.service';
   styleUrls: ['./sales-list.component.sass']
 })
 export class SalesListComponent {
-  
-  public salesModel: SalesModel[] = [];
+  public data: Sale[] = [];
 
   constructor(public salesService: SalesService) {}
 
@@ -18,11 +17,9 @@ export class SalesListComponent {
   }
 
   private getAllSales(): void {
-    this.salesService.getSales()
-    .subscribe(sales => {
-      this.salesModel = sales;
-      console.log(sales);
+    this.salesService.getSales().subscribe(sales => {
+      this.data = sales;
+      //console.log(sales);
     });
   }
-
 }
