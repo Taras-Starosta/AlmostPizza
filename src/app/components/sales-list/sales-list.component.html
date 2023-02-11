@@ -1,4 +1,5 @@
-<p>sales-list works!</p>
+<div *ngIf="!errorForUser">sales-list works!</div>
+<div *ngIf="errorForUser">{{errorForUser}}</div>
 <div *ngFor="let item of data">
     <div>
         <div>{{item.id}}</div>

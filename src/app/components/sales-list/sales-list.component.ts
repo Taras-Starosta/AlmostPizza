@@ -9,17 +9,20 @@ import { SalesService } from 'src/app/services/sales.service';
 })
 export class SalesListComponent {
   public data: Sale[] = [];
+  public errorForUser!: string;
 
   constructor(public salesService: SalesService) {}
 
   ngOnInit(): void {
-    this.getAllSales(); 
+    this.getAllSales();
   }
 
   private getAllSales(): void {
     this.salesService.getSales().subscribe(sales => {
       this.data = sales;
       //console.log(sales);
+    }, error => {
+      this.errorForUser = error;
     });
   }
 }

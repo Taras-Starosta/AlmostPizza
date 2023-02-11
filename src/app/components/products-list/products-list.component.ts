@@ -9,7 +9,8 @@ import { ProductsService } from 'src/app/services/products.service';
 })
 export class ProductsListComponent {
   public data: Product[] = [];
-
+  public errorForUser!: string;
+  
   constructor(public productsService: ProductsService) {}
 
   ngOnInit(): void {
@@ -20,6 +21,8 @@ export class ProductsListComponent {
     this.productsService.getProducts().subscribe(products => {
       this.data = products;
       //console.log(products);
+    }, error => {
+      this.errorForUser = error;
     });
   }
 }
