@@ -3,23 +3,23 @@
         <!--------- Mat Card Header --------->
         <div class="card-title">Create a new account</div>
         <!--------------------------- User Reg Form --------------------------->
-        <form [formGroup]="RegForm">
+        <form [formGroup]="RegForm" #productsForm="ngForm" (ngSubmit)="addUser(productsForm.value)">
             <mat-card-content>
                 <!--------------------------- Email Input --------------------------->
                 <mat-form-field appearance="outline">
                     <mat-label>Email</mat-label>
                     <input 
                         matInput 
-                        formControlName="Email"
-                        [(ngModel)]="userObj.email" 
+                        formControlName="email"
+                        name = "email"
+                        ngModel
                         placeholder="Email"
                     >
-                    
                 </mat-form-field>
                 <!--------------------------- Live Email Input Errors ---------------------------> 
-                <div id="error-message" *ngIf="RegForm.controls['Email'].invalid && (RegForm.controls['Email'].dirty || RegForm.controls['Email'].touched)">
-                    <div id="error-text" *ngIf="RegForm.controls['Email'].errors!['required']">Email is required</div>
-                    <div id="error-text" *ngIf="RegForm.controls['Email'].errors!['email']">Please enter a valid email address</div>
+                <div id="error-message" *ngIf="RegForm.controls['email'].invalid && (RegForm.controls['email'].dirty || RegForm.controls['email'].touched)">
+                    <div id="error-text" *ngIf="RegForm.controls['email'].errors!['required']">Email is required</div>
+                    <div id="error-text" *ngIf="RegForm.controls['email'].errors!['email']">Please enter a valid email address</div>
                 </div><br>
                 <!--------------------------- Password Input --------------------------->
                 <mat-form-field appearance="outline">
@@ -27,16 +27,17 @@
                     <input 
                         matInput 
                         [type]="hidePass ? 'password' : 'text'"
-                        formControlName="Password"
-                        [(ngModel)]="userObj.password" 
+                        formControlName="password"
+                        name = "password"
+                        ngModel
                         placeholder="Password"
                     >
                     <mat-icon matSuffix (click)="hidePass = !hidePass">{{hidePass ? 'visibility_off' : 'visibility'}}</mat-icon>
                 </mat-form-field>
                 <!--------------------------- Live Password Input Errors --------------------------->
-                <div id="error-message" class="error" *ngIf="RegForm.controls['Password'].invalid && (RegForm.controls['Password'].dirty || RegForm.controls['Password'].touched)">
-                    <div id="error-text" *ngIf="RegForm.controls['Password'].errors!['required']">Password is required</div>
-                    <div id="error-text" *ngIf="!RegForm.controls['Password'].errors!['required'] && RegForm.controls['Password'].errors!pattern">
+                <div id="error-message" class="error" *ngIf="RegForm.controls['password'].invalid && (RegForm.controls['password'].dirty || RegForm.controls['password'].touched)">
+                    <div id="error-text" *ngIf="RegForm.controls['password'].errors!['required']">Password is required</div>
+                    <div id="error-text" *ngIf="!RegForm.controls['password'].errors!['required'] && RegForm.controls['password'].errors!pattern">
                         The password must contain the following:<br>
                         Only English letters<br>
                         At least 8 English characters in length<br>
@@ -45,34 +46,15 @@
                         At least 1 number
                     </div>
                 </div><br>
-                <!--------------------------- Confirm Password Input --------------------------->
-                <mat-form-field appearance="outline">
-                    <mat-label>Confirm Password</mat-label>
-                    <input 
-                        matInput 
-                        [type]="hidePass ? 'password' : 'text'"
-                        name="ConfirmPassword" 
-                        formControlName="ConfirmPassword"
-                        placeholder="Password"
-                    >
-                    <mat-icon matSuffix (click)="hidePass = !hidePass">{{hidePass ? 'visibility_off' : 'visibility'}}</mat-icon>
-                </mat-form-field>
-                <!--------------------------- Live Confirm Password Input Errors --------------------------->
-                <div id="error-message" *ngIf="RegForm.controls['ConfirmPassword'].invalid && (RegForm.controls['ConfirmPassword'].dirty || RegForm.controls['ConfirmPassword'].touched)">
-                    <div id="error-text" *ngIf="RegForm.controls['ConfirmPassword'].errors!['required']">Password is required</div>
-                    <div id="error-text" *ngIf="!RegForm.controls['ConfirmPassword'].errors!['required'] && RegForm.controls['ConfirmPassword'].errors!mustMatch">Passwords must match</div>
-                </div><br>
                 <!--------------------------- Register Button --------------------------->
-                <!--------------------------- (click)="addUser(userObj)" is button action --------------------------->
                 <button 
                     id="complete-button"
                     mat-stroked-button
                     color="primary"
                     [disabled]="!RegForm.valid" 
-                    
+                    type="submit"
                 >Create a new account</button>
                 <br>
-                <!-- Form is valid: {{RegForm.valid}}<br>User is active: {{this.isActive}} -->
                 <p style="text-align: center; margin: 12px 0px;">or</p>
                 <button 
                     id="complete-button"
