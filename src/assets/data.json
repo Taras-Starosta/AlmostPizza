@@ -1,30 +1,28 @@
-[
-    {
-        "title": "Driven: The Race to Create the Autonomous Car",
-        "author": "Alex Davies",
-        "status": true,
-        "url": "https://m.media-amazon.com/images/W/WEBP_402378-T2/images/I/41OxYVrnOHL._SY291_BO1,204,203,200_QL40_FMwebp_.jpg",
-        "link": "https://www.amazon.com/Driven-Race-Create-Autonomous-Car/dp/1501199439"
-    },
-    {
-        "title": "If Then",
-        "author": "Jill Lepore",
-        "status": false,
-        "url": "https://observer.com/wp-content/uploads/sites/2/2020/10/9781631496103.jpg?quality=80&strip",
-        "link": "https://www.amazon.com/If-Then-Simulmatics-Corporation-Invented/dp/1631496107"
-    },
-    {
-        "title": "The Hype Machine",
-        "author": "Sinan Aral",
-        "status": false,
-        "url": "https://images.penguinrandomhouse.com/cover/9780593339602?width=400",
-        "link": "https://www.amazon.com/Hype-Machine-Disrupts-Elections-Health/dp/0525574514/ref=sr_1_1?crid=1X6B1YO06FR1M&dchild=1&keywords=the+hype+machine&qid=1623709586&s=books&sprefix=the+hype+m%2Cstripbooks%2C224&sr=1-1"
-    },
-    {
-        "title": "Predict and Surveil",
-        "author": "Sarah Brayne",
-        "status": false,
-        "url": "https://tmg.dmmserver.com/media/640/97801906/9780190684099.jpg",
-        "link": "https://www.amazon.com/Predict-Surveil-Discretion-Future-Policing/dp/0190684097/ref=sr_1_1?dchild=1&keywords=predict+and+surveil&qid=1623709612&s=books&sr=1-1"
-    }
-]
+{
+    "products": [
+        {
+            "id": 1,
+            "price": 14.99,
+            "img": 1,
+            "description": "Some juicy shit"
+        },
+        {
+            "id": 2,
+            "price": 12.99,
+            "img": 2,
+            "description": "Standard"
+        },
+        {
+            "id": 3,
+            "price": 15.99,
+            "img": 3,
+            "description": "Very tasty pizza"
+        },
+        {
+            "id": 4,
+            "price": 10.99,
+            "img": 4,
+            "description": "With fucking pineapples"
+        }
+    ]
+}

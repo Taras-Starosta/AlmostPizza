@@ -10,7 +10,7 @@ import { ProductsService } from 'src/app/services/products.service';
 export class ProductsListComponent {
   public data: Product[] = [];
   public errorForUser!: string;
-  
+
   constructor(public productsService: ProductsService) {}
 
   ngOnInit(): void {
