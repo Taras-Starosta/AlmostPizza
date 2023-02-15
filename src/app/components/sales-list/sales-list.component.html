@@ -1,9 +1,12 @@
-<div *ngIf="!errorForUser">sales-list works!</div>
 <div *ngIf="errorForUser">{{errorForUser}}</div>
-<div *ngFor="let item of data">
-    <div>
-        <div>{{item.id}}</div>
-        <div>{{item.description}}</div>
-        <div>{{item.dueTo}}</div>
-    </div>
+<div *ngIf="data" class="carousel-position">
+    <ngb-carousel [interval]="3000" [keyboard]="keyboard" [pauseOnHover]="pauseOnHover" [pauseOnFocus]="pauseOnFocus">
+        <ng-template ngbSlide *ngFor="let item of data">
+            <img src="{{imgPath}}{{item.id}}.png" [alt]="item.description" class="slider-img">
+            <div class="carousel-caption">
+                <h3 style="font-size: 1.75rem;"><b>Available until </b><b style="color: rgb(255, 238, 0); text-decoration: underline;">{{item.dueTo}}</b></h3>
+                <p style="padding-bottom: 1rem; font-size: 1rem;">{{item.description}}</p>
+            </div>
+        </ng-template>
+    </ngb-carousel>
 </div>

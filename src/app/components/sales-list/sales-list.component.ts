@@ -10,6 +10,10 @@ import { SalesService } from 'src/app/services/sales.service';
 export class SalesListComponent {
   public data: Sale[] = [];
   public errorForUser!: string;
+  public imgPath: string = "../../../assets/sales-images/";
+  keyboard = true;
+  pauseOnHover = true;
+	pauseOnFocus = true;
 
   constructor(public salesService: SalesService) {}
 

@@ -15,6 +15,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 
+import { NgbModule, NgbCarouselModule } from '@ng-bootstrap/ng-bootstrap';
+
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { HomeComponent } from './components/home/home.component';
 import { ContactsComponent } from './components/contacts/contacts.component';
@@ -50,6 +52,8 @@ import { SalesListComponent } from './components/sales-list/sales-list.component
     ReactiveFormsModule,
     MatFormFieldModule,
     MatInputModule,
+    NgbModule,
+    NgbCarouselModule
   ],
   providers: [],
   bootstrap: [AppComponent]

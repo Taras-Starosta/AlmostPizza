@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { NgbSlideEvent, NgbSlideEventSource } from '@ng-bootstrap/ng-bootstrap';
 import { Product } from 'src/app/models/products-model';
 import { ProductsService } from 'src/app/services/products.service';
 
@@ -10,9 +11,8 @@ import { ProductsService } from 'src/app/services/products.service';
 export class ProductsListComponent {
   public data: Product[] = [];
   public errorForUser!: string;
-  public imgPath: string = "../../../assets/img/";
-  public imgType: string = ".png";
-  
+  public imgPath: string = "../../../assets/sales-images/";
+
   constructor(public productsService: ProductsService) {}
 
   ngOnInit(): void {

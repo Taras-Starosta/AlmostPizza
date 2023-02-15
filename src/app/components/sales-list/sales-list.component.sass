@@ -1,66 +1,19 @@
-.main-area
-    display: flex
-    justify-content: center
-    align-items: center
-    margin-top: 60px
+@media only screen and (max-width : 4096px) 
+    .carousel-position
+        display: flex
+        justify-content: center
+        align-items: center
 
-.content
-    width: 600px
+    .carousel
+        max-width: 50%
+        max-height: 448px
 
-.card-title
-    padding: 30px 0
-    text-align: center
-    color: #3f51b5
-    border-bottom: 1px solid #b1afaf
-    font-size: 24px
+    .slider-img
+        max-height: 448px
 
-.mat-mdc-card-content
-    padding: 0 48px
-
-.mat-mdc-card-content:last-child
-    padding: 16px 0
-
-.sale-logo-area
-    display: flex
-    justify-content: center
-    align-items: center
-
-#sale-logo
-    min-height: 290px
-    max-height: 290px
-
-#complete-button
-    width: 100%
-    height: 56px
-
-.toolbar-button-row
-    display: flex
-    justify-content: center
-    align-items: center
-
-.mat-icon
-    margin: 0
-
-#arrow-button.left-button
-    transform: scaleX(-1)
-
-#arrow-button.right-button
-    margin-left: 5px
-
-.dots
-    margin-top: 16px
-    display: flex
-    justify-content: center
-    align-items: center
-
-input[type=radio]
-    border: 1px solid #0f0f0f
-    padding: 0.5em
-    width: 100px
-    -webkit-appearance: none
-    -moz-appearance: none
-    appearance: none
-    cursor: pointer
-
-input[type=radio]:checked
-    background-color: #3f51b5
+    .carousel-caption
+        left: 0
+        right: 0
+        bottom: 0
+        width: 100%
+        background: rgba(0,0,0,0.6)
