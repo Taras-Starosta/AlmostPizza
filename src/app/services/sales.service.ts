@@ -24,7 +24,10 @@ export class SalesService {
     return throwError(() => new Error('Something bad happened; please try again later.'));
   }
 
+  //public getSales(): Observable<Sale[]> {
+  //  return this.http.get<Sales>('http://localhost:9000/sales/list').pipe(map(x => {return x.sales}), catchError(this.handleError));
+  //}
   public getSales(): Observable<Sale[]> {
-    return this.http.get<Sales>('http://localhost:9000/sales/list').pipe(map(x => {return x.sales}), catchError(this.handleError));
+    return this.http.get<Sales>('../../assets/salesDB.json').pipe(map(x => {return x.sales}), catchError(this.handleError));
   }
 }

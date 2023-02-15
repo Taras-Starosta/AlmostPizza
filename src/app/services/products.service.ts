@@ -28,6 +28,6 @@ export class ProductsService {
   //  return this.http.get<Products>('http://localhost:9000/products/list').pipe(map(x => {return x.products}), catchError(this.handleError));
   //}
   public getProducts(): Observable<Product[]> {
-    return this.http.get<Products>('../../assets/data.json').pipe(map(x => {return x.products}), catchError(this.handleError));
+    return this.http.get<Products>('../../assets/productsDB.json').pipe(map(x => {return x.products}), catchError(this.handleError));
   }
 }

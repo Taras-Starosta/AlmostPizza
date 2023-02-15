@@ -10,7 +10,9 @@ import { ProductsService } from 'src/app/services/products.service';
 export class ProductsListComponent {
   public data: Product[] = [];
   public errorForUser!: string;
-
+  public imgPath: string = "../../../assets/img/";
+  public imgType: string = ".png";
+  
   constructor(public productsService: ProductsService) {}
 
   ngOnInit(): void {
