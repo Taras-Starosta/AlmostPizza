@@ -25,6 +25,7 @@ import { RegistrationComponent } from './components/registration/registration.co
 import { LoginComponent } from './components/login/login.component';
 import { ProductsListComponent } from './components/products-list/products-list.component';
 import { SalesListComponent } from './components/sales-list/sales-list.component';
+import { RegistrationConfirmationComponent } from './components/registration-confirmation/registration-confirmation.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +39,7 @@ import { SalesListComponent } from './components/sales-list/sales-list.component
     LoginComponent,
     ProductsListComponent,
     SalesListComponent,
+    RegistrationConfirmationComponent,
   ],
   imports: [
     BrowserModule,

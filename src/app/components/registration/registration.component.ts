@@ -36,7 +36,7 @@ export class RegistrationComponent implements OnInit {
 
   addUser(users: {email: string, password: string}) {
     console.log(users);
-    return this.http.post('http://localhost:9000/registration/start', users).subscribe((res) => {
+    return this.http.post('http://localhost:9000/auth/register', users).subscribe((res) => {
       console.log(res);
     });
   }
