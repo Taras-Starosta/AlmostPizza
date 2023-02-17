@@ -11,12 +11,17 @@ import { ProductsService } from 'src/app/services/products.service';
 export class ProductsListComponent {
   public data: Product[] = [];
   public errorForUser!: string;
-  public imgPath: string = "../../../assets/sales-images/";
+  public imgPath: string = "../../../assets/products-images/";
+  public gridColumns: number = 4;
 
   constructor(public productsService: ProductsService) {}
 
   ngOnInit(): void {
     this.getAllProducts(); 
+  }
+
+  toggleGridColumns() {
+    this.gridColumns = this.gridColumns === 3 ? 4 : 3;
   }
 
   private getAllProducts(): void {

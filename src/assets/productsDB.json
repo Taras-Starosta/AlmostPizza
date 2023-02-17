@@ -2,27 +2,27 @@
     "products": [
         {
             "id": 1,
-            "price": 14.99,
+            "price": 10.99,
             "img": 1,
-            "description": "Some juicy shit"
+            "description": "Papperoni"
         },
         {
             "id": 2,
             "price": 12.99,
             "img": 2,
-            "description": "Standard"
+            "description": "Margarita"
         },
         {
             "id": 3,
             "price": 15.99,
             "img": 3,
-            "description": "Very tasty pizza"
+            "description": "Capriccioza"
         },
         {
             "id": 4,
-            "price": 10.99,
+            "price": 14.99,
             "img": 4,
-            "description": "With fucking pineapples"
+            "description": "Neapolitan"
         }
     ]
 }

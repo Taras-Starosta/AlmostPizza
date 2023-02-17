@@ -4,7 +4,7 @@
         <ng-template ngbSlide *ngFor="let item of data">
             <img src="{{imgPath}}{{item.id}}.png" [alt]="item.description" class="slider-img">
             <div class="carousel-caption">
-                <h3 style="font-size: 1.75rem;"><b>Available until </b><b style="color: rgb(255, 238, 0); text-decoration: underline;">{{item.dueTo}}</b></h3>
+                <h3 style="font-size: 1.75rem;"><b>Available until </b><b id="date">{{item.dueTo}}</b></h3>
                 <p style="padding-bottom: 1rem; font-size: 1rem;">{{item.description}}</p>
             </div>
         </ng-template>

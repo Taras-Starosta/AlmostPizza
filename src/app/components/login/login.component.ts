@@ -1,14 +1,7 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms';
+import { HttpClient } from '@angular/common/http';
+import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-//import { CrudService } from '../_services/crud.service';
-//import { MustMatch } from '../_helpers/must-match.validator';
-
-interface User {
-  Email: string;
-  Password: string;
-  //Role: string;
-}
 
 @Component({
   selector: 'app-login',
@@ -17,28 +10,13 @@ interface User {
 })
 export class LoginComponent implements OnInit {
   isActive = false;
-
   LoginForm!: FormGroup;
-
-  @Input() userObj = { 
-    id: '', 
-    email: '', 
-    password: '', 
-    //role: 'User' 
-  }
-
-  public UserReg: User = {
-    Email: '',
-    Password: '',
-    //Role: 'User'
-  };
-
   hidePass = true;
   
   constructor(
-    //public crudService: CrudService, 
     public router: Router,
-    private loginFB: FormBuilder
+    private loginFB: FormBuilder,
+    private http: HttpClient
   ) { this.createForm(); }
 
   ngOnInit() { 
@@ -49,18 +27,13 @@ export class LoginComponent implements OnInit {
 
   createForm() {
     this.LoginForm = this.loginFB.group({
-      Email: ['', [Validators.required, Validators.email]],
-      Password: ['', [Validators.required, Validators.pattern('(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[#@$!%*?&])[A-Za-z\d$@$!%*?&].{8,}')]]
-    }//,{ validator: MustMatch('Password', 'ConfirmPassword') }
-    );
+      email: ['', [Validators.required, Validators.email]],
+      password: ['', [Validators.required, Validators.pattern('(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[#@$!%*?&])[A-Za-z\d$@$!%*?&].{8,}')]]
+    });
   }
 
-  //addUser(data: any) {
-  //  if (this.LoginForm.valid) {
-  //    this.crudService.addUser(this.userObj).subscribe((data: {}) => {
-  //      this.router.navigate(['/profile'])
-  //    })
-  //    this.isActive = true;
-  //  }
-  //}
+  checkUser(users: {email: string, password: string}) {
+    console.log(users);
+    
+  }
 }

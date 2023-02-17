@@ -3,20 +3,19 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
-
-import { AppComponent } from './app.component';
-import { ToolbarComponent } from './components/toolbar/toolbar.component';
-
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 import { NgbModule, NgbCarouselModule } from '@ng-bootstrap/ng-bootstrap';
 
+import { AppComponent } from './app.component';
+import { ToolbarComponent } from './components/toolbar/toolbar.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { HomeComponent } from './components/home/home.component';
 import { ContactsComponent } from './components/contacts/contacts.component';
@@ -55,7 +54,8 @@ import { RegistrationConfirmationComponent } from './components/registration-con
     MatFormFieldModule,
     MatInputModule,
     NgbModule,
-    NgbCarouselModule
+    NgbCarouselModule,
+    FlexLayoutModule
   ],
   providers: [],
   bootstrap: [AppComponent]

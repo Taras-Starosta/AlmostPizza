@@ -3,7 +3,7 @@
         <!--------- Mat Card Header --------->
         <div class="card-title">Create a new account</div>
         <!--------------------------- User Reg Form --------------------------->
-        <form [formGroup]="RegForm" #productsForm="ngForm" (ngSubmit)="addUser(productsForm.value)">
+        <form [formGroup]="RegForm" #registerForm="ngForm" (ngSubmit)="addUser(registerForm.value)">
             <mat-card-content>
                 <!--------------------------- Email Input --------------------------->
                 <mat-form-field appearance="outline">
@@ -32,7 +32,7 @@
                         ngModel
                         placeholder="Password"
                     >
-                    <mat-icon matSuffix (click)="hidePass = !hidePass">{{hidePass ? 'visibility_off' : 'visibility'}}</mat-icon>
+                    <mat-icon id="icon" matSuffix (click)="hidePass = !hidePass">{{hidePass ? 'visibility_off' : 'visibility'}}</mat-icon>
                 </mat-form-field>
                 <!--------------------------- Live Password Input Errors --------------------------->
                 <div id="error-message" class="error" *ngIf="RegForm.controls['password'].invalid && (RegForm.controls['password'].dirty || RegForm.controls['password'].touched)">
@@ -48,18 +48,16 @@
                 </div><br>
                 <!--------------------------- Register Button --------------------------->
                 <button 
-                    id="complete-button"
+                    id="complete-button-disabled"
                     mat-stroked-button
-                    color="primary"
                     [disabled]="!RegForm.valid" 
                     type="submit"
                 >Create a new account</button>
                 <br>
-                <p style="text-align: center; margin: 12px 0px;">or</p>
+                <p id="or">or</p>
                 <button 
                     id="complete-button"
                     mat-stroked-button
-                    color="primary"
                     routerLink="../login"
                 >Use an existing account</button>
             </mat-card-content>

@@ -7,12 +7,20 @@
 .mat-card
     width: fit-content
 
+.mat-mdc-card
+    border-radius: 15px
+    border-color: #E7A545
+
 .card-title
     padding: 30px 0
     text-align: center
-    color: #9c9a9a
-    border-bottom: 1px solid #b1afaf
-    background-color: #e9e7e75d
+    color: #442827
+    font-weight: 900
+    border-top-left-radius: 15px
+    border-top-right-radius: 15px
+    border-color: #E7A545
+    border-bottom: 1px solid #442827
+    background-color: #E7A545
     font-size: 24px
 
 .mat-mdc-card-content
@@ -20,6 +28,9 @@
 
 .mat-mdc-form-field
     width: 334px
+
+.mdc-text-field:not(.mdc-text-field--disabled) .mdc-text-field__input
+    color: #442827
 
 #error-message.ng-star-inserted
     margin-top: -20px
@@ -30,11 +41,37 @@
 
 #error-text.ng-star-inserted
     padding: 5px
+    color: #442827
+    font-size: 16px
+    font-weight: 500
 
-#complete-button
+#complete-button-disabled, #complete-button
     width: 100%
     height: 56px
+    font-size: 16px
+    font-weight: 500
+
+button:not(:disabled), [type="button"]:not(:disabled), [type="reset"]:not(:disabled), [type="submit"]:not(:disabled)
+    color: #442827
+    background-color: #E7A545
+    border-color: #E7A545
+
+#complete-button
+    color: #442827
+    background-color: #E7A545
+    border-color: #E7A545
+
+#or
+    text-align: center
+    margin: 12px 0px
+    color: #442827
+    font-size: 20px
+    font-weight: 500px
 
 .mat-mdc-outlined-button[disabled][disabled]
     cursor: not-allowed
     pointer-events: all
+    background-color: #e7e7e7
+
+#icon
+    color: #442827

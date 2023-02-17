@@ -8,7 +8,6 @@ import { Router } from '@angular/router';
   templateUrl: './registration.component.html',
   styleUrls: ['./registration.component.sass']
 })
-
 export class RegistrationComponent implements OnInit {
   isActive = false;
   RegForm!: FormGroup;
@@ -30,8 +29,7 @@ export class RegistrationComponent implements OnInit {
     this.RegForm = this.regFB.group({
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required, Validators.pattern('(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[#@$!%*?&])[A-Za-z\d$@$!%*?&].{8,}')]],
-    }
-    );
+    });
   }
 
   addUser(users: {email: string, password: string}) {
