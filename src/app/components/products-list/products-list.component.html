@@ -1,15 +1,17 @@
-<div id="products">
-    <div *ngIf="errorForUser">{{errorForUser}}</div>
-    <div class="content" fxLayout="row wrap" fxLayoutGap="16px grid" *ngIf="!errorForUser">
-        <div [fxFlex]="(100/gridColumns) + '%'" fxFlex.xs="100%" fxFlex.sm="33%" *ngFor="let item of data">
-            <mat-card class="mat-elevation-z4" MatCardAppearance="outlined">
-                <div id="header"><b>Pizza {{item.description}}</b></div>
-                <img mat-card-image src="{{imgPath}}{{item.img}}.png"/>
-                <div id="btns">
-                    <div id="div-left">${{item.price}}</div>
-                    <button id="btn-2" mat-stroked-button routerLink=""><mat-icon style="color: #E7A545;">shopping_basket</mat-icon>Order Now</button>
-                </div>
-            </mat-card>
+<div class="display-center">
+    <div id="products">
+        <div *ngIf="errorForUser">{{errorForUser}}</div>{{this.scrWidth}}
+        <div class="content" fxLayout="row wrap" fxLayoutGap="16px grid" *ngIf="!errorForUser">
+            <div [fxFlex]="(100/gridColumns) + '%'" fxFlex.xs="100%"  *ngFor="let item of data">
+                <mat-card class="mat-elevation-z4" MatCardAppearance="outlined">
+                    <div id="header"><b>Pizza {{item.description}}</b></div>
+                    <img mat-card-image src="{{imgPath}}{{item.img}}.png"/>
+                    <div id="btns">
+                        <div id="div-left">${{item.price}}</div>
+                        <button id="btn-2" mat-stroked-button routerLink=""><mat-icon style="color: #E7A545;">shopping_basket</mat-icon>Order Now</button>
+                    </div>
+                </mat-card>
+            </div>
         </div>
     </div>
 </div>

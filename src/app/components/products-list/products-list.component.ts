@@ -1,5 +1,4 @@
-import { Component } from '@angular/core';
-import { NgbSlideEvent, NgbSlideEventSource } from '@ng-bootstrap/ng-bootstrap';
+import { Component, HostListener } from '@angular/core';
 import { Product } from 'src/app/models/products-model';
 import { ProductsService } from 'src/app/services/products.service';
 
@@ -12,16 +11,23 @@ export class ProductsListComponent {
   public data: Product[] = [];
   public errorForUser!: string;
   public imgPath: string = "../../../assets/products-images/";
-  public gridColumns: number = 4;
+  public gridColumns!: number;
+  public scrWidth: any;
 
-  constructor(public productsService: ProductsService) {}
-
-  ngOnInit(): void {
-    this.getAllProducts(); 
+  constructor(public productsService: ProductsService) {
+    this.getScreenSize(); 
   }
 
-  toggleGridColumns() {
-    this.gridColumns = this.gridColumns === 3 ? 4 : 3;
+  @HostListener('window:resize', ['$event'])
+  getScreenSize(event?: any) {
+    this.scrWidth = window.innerWidth;
+    if (this.scrWidth <= 880) { this.gridColumns = 2; }
+    else if (this.scrWidth <= 1300) { this.gridColumns = 3; } else { this.gridColumns = 4; }
+    console.log(this.scrWidth);
+  }
+
+  ngOnInit(): void {
+    this.getAllProducts();
   }
 
   private getAllProducts(): void {
