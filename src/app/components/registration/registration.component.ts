@@ -9,7 +9,6 @@ import { Router } from '@angular/router';
   styleUrls: ['./registration.component.sass']
 })
 export class RegistrationComponent implements OnInit {
-  isActive = false;
   RegForm!: FormGroup;
   hidePass = true;
   
@@ -18,24 +17,18 @@ export class RegistrationComponent implements OnInit {
     private regFB: FormBuilder,
     private http: HttpClient
   ) { this.createForm(); }
-
-  ngOnInit() { 
-    if (this.isActive === true) {
-      this.router.navigate(['/profile'])
-    }
-  }
-
+  
+  ngOnInit() { }
+  
   createForm() {
     this.RegForm = this.regFB.group({
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required, Validators.pattern('(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[#@$!%*?&])[A-Za-z\d$@$!%*?&].{8,}')]],
     });
   }
-
-  addUser(users: {email: string, password: string}) {
+  
+  addUser(users: { email: string, password: string }) {
     console.log(users);
-    return this.http.post('http://localhost:9000/auth/register', users).subscribe((res) => {
-      console.log(res);
-    });
+    return this.http.post('http://localhost:9000/auth/register', users).subscribe((res) => { console.log(res); });
   }
 }

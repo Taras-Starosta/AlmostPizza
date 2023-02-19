@@ -5,6 +5,4 @@ import { Component } from '@angular/core';
   templateUrl: './profile.component.html',
   styleUrls: ['./profile.component.sass']
 })
-export class ProfileComponent {
-
-}
+export class ProfileComponent { }

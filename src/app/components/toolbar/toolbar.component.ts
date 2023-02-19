@@ -1,5 +1,4 @@
-import { Component, Input, OnInit, ViewChild } from '@angular/core';
-//import { RegistrationComponent } from '../registration/registration.component';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-toolbar',
@@ -7,11 +6,5 @@ import { Component, Input, OnInit, ViewChild } from '@angular/core';
   styleUrls: ['./toolbar.component.sass']
 })
 export class ToolbarComponent implements OnInit {
-  //@ViewChild('getFromReg', { read: RegistrationComponent, static: false })
-  //getFromReg!: RegistrationComponent
-  //@Input() Active: any
-
-  ngOnInit() {
-      //this.Active=this.getFromReg.isActive;
-  }
+  ngOnInit() { }
 }

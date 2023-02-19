@@ -11,7 +11,6 @@ import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { FlexLayoutModule } from '@angular/flex-layout';
-
 import { NgbModule, NgbCarouselModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { AppComponent } from './app.component';

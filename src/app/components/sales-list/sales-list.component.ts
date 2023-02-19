@@ -11,22 +11,17 @@ export class SalesListComponent {
   public data: Sale[] = [];
   public errorForUser!: string;
   public imgPath: string = "../../../assets/sales-images/";
-  keyboard = true;
-  pauseOnHover = true;
-	pauseOnFocus = true;
-
+  public keyboard = true;
+  public pauseOnHover = true;
+	public pauseOnFocus = true;
+  
   constructor(public salesService: SalesService) {}
-
-  ngOnInit(): void {
-    this.getAllSales();
-  }
-
+  
+  ngOnInit(): void { this.getAllSales(); }
+  
   private getAllSales(): void {
     this.salesService.getSales().subscribe(sales => {
       this.data = sales;
-      //console.log(sales);
-    }, error => {
-      this.errorForUser = error;
-    });
+    }, error => { this.errorForUser = error; });
   }
 }

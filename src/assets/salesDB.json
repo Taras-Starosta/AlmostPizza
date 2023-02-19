@@ -2,22 +2,22 @@
     "sales": [
         {
             "id": 1,
-            "description": "Some juicy shit",
+            "description": "Special offer №1",
             "dueTo": "05.03.2023"
         },
         {
             "id": 2,
-            "description": "Standard",
+            "description": "Special offer №2",
             "dueTo": "01.03.2023"
         },
         {
             "id": 3,
-            "description": "Very tasty pizza",
+            "description": "Special offer №3",
             "dueTo": "28.02.2023"
         },
         {
             "id": 4,
-            "description": "With fucking pineapples",
+            "description": "Special offer №4",
             "dueTo": "28.02.2023"
         }
     ]

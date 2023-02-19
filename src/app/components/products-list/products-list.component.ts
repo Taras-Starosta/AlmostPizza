@@ -13,29 +13,23 @@ export class ProductsListComponent {
   public imgPath: string = "../../../assets/products-images/";
   public gridColumns!: number;
   public scrWidth: any;
-
-  constructor(public productsService: ProductsService) {
-    this.getScreenSize(); 
-  }
-
+  
+  constructor(public productsService: ProductsService) { this.getScreenSize(); }
+  
   @HostListener('window:resize', ['$event'])
-  getScreenSize(event?: any) {
+  
+  getScreenSize() {
     this.scrWidth = window.innerWidth;
     if (this.scrWidth <= 880) { this.gridColumns = 2; }
     else if (this.scrWidth <= 1300) { this.gridColumns = 3; } else { this.gridColumns = 4; }
     console.log(this.scrWidth);
   }
-
-  ngOnInit(): void {
-    this.getAllProducts();
-  }
-
+  
+  ngOnInit(): void { this.getAllProducts(); }
+  
   private getAllProducts(): void {
     this.productsService.getProducts().subscribe(products => {
       this.data = products;
-      //console.log(products);
-    }, error => {
-      this.errorForUser = error;
-    });
+    }, error => { this.errorForUser = error; });
   }
 }

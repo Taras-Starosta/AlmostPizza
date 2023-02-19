@@ -1,67 +1,31 @@
-<div class="main-area" *ngIf="!this.isActive">
+<div class="main-area">
     <mat-card>
-        <!--------- Mat Card Header --------->
         <div class="card-title">Log in to your account</div>
-        <!--------------------------- User Login Form --------------------------->
         <form [formGroup]="LoginForm" #loginForm="ngForm" (ngSubmit)="checkUser(loginForm.value)">
             <mat-card-content>
-                <!--------------------------- Email Input --------------------------->
                 <mat-form-field appearance="outline">
                     <mat-label>Email</mat-label>
-                    <input 
-                        matInput 
-                        formControlName="email"
-                        name="email" 
-                        ngModel
-                        placeholder="Email"
-                    >
-                    
+                    <input matInput ngModel formControlName="email" name="email" placeholder="Email">
                 </mat-form-field>
-                <!--------------------------- Live Email Input Errors ---------------------------> 
                 <div id="error-message" *ngIf="LoginForm.controls['email'].invalid && (LoginForm.controls['email'].dirty || LoginForm.controls['email'].touched)">
                     <div id="error-text" *ngIf="LoginForm.controls['email'].errors!['required']">Email is required</div>
                     <div id="error-text" *ngIf="LoginForm.controls['email'].errors!['email']">Please enter a valid email address</div>
                 </div><br>
-                <!--------------------------- Password Input --------------------------->
                 <mat-form-field appearance="outline">
                     <mat-label>Password</mat-label>
-                    <input 
-                        matInput 
-                        [type]="hidePass ? 'password' : 'text'"
-                        formControlName="password"
-                        name="password" 
-                        ngModel
-                        placeholder="Password"
-                    >
+                    <input matInput ngModel [type]="hidePass ? 'password' : 'text'" formControlName="password" name="password" placeholder="Password">
                     <mat-icon id="icon" matSuffix (click)="hidePass = !hidePass">{{hidePass ? 'visibility_off' : 'visibility'}}</mat-icon>
                 </mat-form-field>
-                <!--------------------------- Live Password Input Errors --------------------------->
                 <div id="error-message" class="error" *ngIf="LoginForm.controls['password'].invalid && (LoginForm.controls['password'].dirty || LoginForm.controls['password'].touched)">
                     <div id="error-text" *ngIf="LoginForm.controls['password'].errors!['required']">Password is required</div>
                     <div id="error-text" *ngIf="!LoginForm.controls['password'].errors!['required'] && LoginForm.controls['password'].errors!pattern">
-                        The password must contain the following:<br>
-                        Only English letters<br>
-                        At least 8 English characters in length<br>
-                        At least 1 lowercase and 1 uppercase letters<br>
-                        At least 1 special character ( #@$!%*?& )<br>
-                        At least 1 number
+                        The password must contain the following:<br>Only English letters<br>At least 8 English characters in length<br>
+                        At least 1 lowercase and 1 uppercase letters<br>At least 1 special character ( #@$!%*?& )<br>At least 1 number
                     </div>
-                </div><br>
-                <br>
-                <!--------------------------- Login Button --------------------------->
-                <button 
-                    id="complete-button-disabled"
-                    mat-stroked-button
-                    [disabled]="!LoginForm.valid" 
-                    type="submit"
-                >Log in to your account</button>
-                <br>
-                <p style="text-align: center; margin: 12px 0px;">or</p>
-                <button 
-                    id="complete-button"
-                    mat-stroked-button
-                    routerLink="../registration"
-                >Create a new account</button>
+                </div><br><br>
+                <button mat-stroked-button id="complete-button-disabled" [disabled]="!LoginForm.valid" type="submit">Log in to your account</button><br>
+                <p id="or">or</p>
+                <button mat-stroked-button id="complete-button" routerLink="/registration">Create a new account</button>
             </mat-card-content>
         </form>
     </mat-card>
